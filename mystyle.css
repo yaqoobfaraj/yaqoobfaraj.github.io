@@ -1,0 +1,111 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Verdana', sans-serif;
+  background: linear-gradient(to right, #87ceeb, #f0f8ff);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header */
+h1 {
+  color: #ffffff;
+  background-color: #0077b6;
+  text-align: center;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Section Headings */
+h2 {
+  color: #0077b6;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #0077b6;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Paragraphs */
+p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* Lists */
+ul {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+/* Image Styling */
+section img {
+  display: block;
+  margin: 20px auto;
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Section Styling */
+section {
+  background: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+    padding: 10px;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+/* Social Links Section */
+.social-links {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.linkedin-btn {
+  display: inline-block;
+  background-color: #0077b5;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.linkedin-btn:hover {
+  background-color: #005983;
+  transform: scale(1.05);
+}
+
