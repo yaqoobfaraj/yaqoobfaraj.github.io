@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DICE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: black;
+            color: red;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 0px 0px 8px red;
+        }
+
+        select, input[type="text"] {
+            height: 40px;
+            font-size: 1.2rem;
+            border: 2px solid red;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 5px;
+            text-align: center;
+            background: black;
+            color: red;
+        }
+
+        input[type="text"] {
+            width: 70px;
+        }
+
+        button {
+            background: red;
+            color: black;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s ease;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: darkred;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .dice-container {
+            background: #111;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 0px 15px red;
+            margin: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎲 Roll the Dice 🎲</h1>
+    
+    <div class="dice-container">
+        <h2>Choose a Dice</h2>
+        <select id="diceType">
+            <option value="6" selected>D6</option>
+            <option value="8">D8</option>
+            <option value="20">D20</option>
+        </select>
+        <br>
+        Result: 
+        <input type="text" id="diceResult" value="-" readonly>
+        <br><br>
+        <button onclick="rollDice()">Roll</button>
+    </div>
+
+    <script>
+        function rollDice() {
+            var sides = document.getElementById("diceType").value;
+            var result = Math.floor((Math.random() * sides) + 1);
+            document.getElementById("diceResult").value = result;
+        }
+    </script>
+</body>
+</html>
+
+
