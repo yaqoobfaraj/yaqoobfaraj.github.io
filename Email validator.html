@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="mystyle2.css">
+  <title>Form Validation</title>
+  <script>
+    function validateForm() {
+      // Get form values
+      var username = document.forms["Form1"]["username"].value;
+      var email = document.forms["Form1"]["email"].value;
+      var password = document.forms["Form1"]["password1"].value;
+      var password2 = document.forms["Form1"]["password2"].value;
+
+      // Username check
+      if (username == null || username.trim() === "") {
+        alert("Username must not be blank!");
+        return false;
+      }
+
+      // Password match check
+      if (password !== password2) {
+        alert("Passwords must match");
+        return false;
+      }
+
+      // Email check for '@'
+      var foundAt = false;
+      for (var i = 0; i < email.length; i++) {
+        if (email[i] === '@') {
+          alert("Found the @ at Pos: " + i);
+          foundAt = true;
+        }
+      }
+
+      if (!foundAt) {
+        alert("Please enter a valid email");
+        return false;
+      }
+
+      return true; // All checks passed
+    }
+  </script>
+</head>
+<body style="background-color:#000000;">
+  <h1>Simple Form Validation</h1>
+  <div class="container">
+  <form name="Form1" onsubmit="return validateForm()" method="post">
+    <p>Username: <input type="text" name="username"></p>
+    <p>Email: <input type="text" name="email"></p>
+    <p>Password: <input type="password" name="password1"></p>
+    <p>Repeat Password: <input type="password" name="password2"></p>
+    <p><input type="submit" value="Submit"></p>
+  </form>
+  </div>
+</body>
+</html>
+
+
+
