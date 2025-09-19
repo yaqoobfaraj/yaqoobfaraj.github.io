@@ -1,29 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="mystyle2.css">
   <meta charset="UTF-8">
   <title>Date Span Calculator</title>
+  <link rel="stylesheet" href="mystyle2.css">
+  <style>
+    /* Ensure date inputs are visible */
+    input[type="date"] {
+      background-color: white;
+      color: black;
+      padding: 5px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
   <script>
     function calculateDateSpan() {
-      var start = new Date(document.getElementById("startDate").value);
-      var end = new Date(document.getElementById("endDate").value);
+      let start = new Date(document.getElementById("startDate").value);
+      let end = new Date(document.getElementById("endDate").value);
 
       if (isNaN(start) || isNaN(end)) {
         alert("Please select both dates.");
         return;
       }
 
-      var diffTime = Math.abs(end - start);
-      var diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+      
+      if (start > end) {
+        [start, end] = [end, start];
+      }
 
-      var years = Math.floor(diffDays / 365);
-      var months = Math.floor((diffDays % 365) / 30);
-      var days = (diffDays % 365) % 30;
+    
+      let diffMs = end - start;
+      let totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+      let years = end.getFullYear() - start.getFullYear();
+      let months = end.getMonth() - start.getMonth();
+      let days = end.getDate() - start.getDate();
+
+      if (days < 0) {
+        months--;
+        days += new Date(end.getFullYear(), end.getMonth(), 0).getDate();
+      }
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
 
       document.getElementById("result").innerHTML =
-        "Total Days: " + diffDays + "<br>" +
-        "Years: " + years + ", Months: " + months + ", Days: " + days;
+        "Total Days: " + totalDays + "<br>" +
+        "Exact: " + years + " years, " + months + " months, " + days + " days";
     }
   </script>
 </head>
@@ -37,3 +65,4 @@
   </div>
 </body>
 </html>
+
