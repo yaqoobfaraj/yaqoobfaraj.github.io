@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="mystyle2.css">
+  <meta charset="UTF-8">
+  <title>Date Span Calculator</title>
+  <script>
+    function calculateDateSpan() {
+      var start = new Date(document.getElementById("startDate").value);
+      var end = new Date(document.getElementById("endDate").value);
+
+      if (isNaN(start) || isNaN(end)) {
+        alert("Please select both dates.");
+        return;
+      }
+
+      var diffTime = Math.abs(end - start);
+      var diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+      var years = Math.floor(diffDays / 365);
+      var months = Math.floor((diffDays % 365) / 30);
+      var days = (diffDays % 365) % 30;
+
+      document.getElementById("result").innerHTML =
+        "Total Days: " + diffDays + "<br>" +
+        "Years: " + years + ", Months: " + months + ", Days: " + days;
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Date Span Calculator</h1>
+    <p>Start Date: <input type="date" id="startDate"></p>
+    <p>End Date: <input type="date" id="endDate"></p>
+    <button onclick="calculateDateSpan()">Calculate</button>
+    <div id="result"></div>
+  </div>
+</body>
+</html>
