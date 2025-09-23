@@ -1,7 +1,7 @@
 /* Email and Date style */
 body {
   background-color: #000;
-  color: #ff0000;
+  color: #00aaff; /* main text in blue */
   font-family: Arial, sans-serif;
   text-align: center;
   margin: 0;
@@ -11,7 +11,7 @@ body {
 /* Shared container style */
 .container {
   background-color: #111;
-  border: 2px solid #ff0000;
+  border: 2px solid #00aaff; /* blue border */
   padding: 20px;
   border-radius: 8px;
   width: 320px;
@@ -20,7 +20,7 @@ body {
 
 /* Section titles */
 .container h1 {
-  background-color: #ff0000;
+  background-color: #00aaff; /* blue background */
   color: #fff;
   padding: 10px;
   margin-top: 0;
@@ -33,16 +33,14 @@ body {
   font-weight: bold;
 }
 
-
 /* Labels */
 label {
   display: block;
-  color: #ffffff; /* changed from #fff to ensure consistency */
+  color: #ffffff;
   margin: 10px 0 5px;
   font-weight: bold;
   text-align: left;
 }
-
 
 /* Inputs */
 input[type="text"],
@@ -52,8 +50,8 @@ input[type="date"] {
   padding: 8px;
   margin-bottom: 15px;
   background-color: #000;
-  color: #ff0000;
-  border: 1px solid #ff0000;
+  color: #00aaff; /* blue text */
+  border: 1px solid #00aaff; /* blue border */
   border-radius: 4px;
 }
 
@@ -62,7 +60,7 @@ button,
 input[type="submit"] {
   width: 100%;
   padding: 10px;
-  background-color: #ff0000;
+  background-color: #00aaff; /* blue button */
   color: #000;
   font-weight: bold;
   border: none;
@@ -72,7 +70,7 @@ input[type="submit"] {
 
 button:hover,
 input[type="submit"]:hover {
-  background-color: #cc0000;
+  background-color: #0077cc; /* darker blue on hover */
   color: #fff;
 }
 
@@ -83,5 +81,5 @@ input[type="submit"]:hover {
   margin-top: 15px;
   font-size: 1.1em;
   font-weight: bold;
-  color: #00ff00;
+  color: #00ff00; /* keep green for success feedback */
 }
